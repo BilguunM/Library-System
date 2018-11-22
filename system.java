@@ -1,3 +1,5 @@
+package sw_sem7;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
