@@ -16,13 +16,6 @@ public class bookCategory {
 		return bc_id;
 	}
 
-	public void setBc_id(String bc_id) {
-		this.bc_id = bc_id;
-	}
-
-	public String getBc_title() {
-		return bc_title;
-	}
 
 	public void setBc_title(String bc_title) {
 		this.bc_title = bc_title;
