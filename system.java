@@ -7,10 +7,15 @@ public class system {
 	book bk;
 	bookCategory bc;
 	student st;	
-	
+	ArrayList<book> book = new ArrayList<>();
+	ArrayList<student> student = new ArrayList<>();
+	Scanner input = new Scanner(System.in);
+
 	public system() {
 		lib = new librarian("Tsetseg", "lib_001","212");
 		st = new student("15b1seas1232", "Ganbold", "Hulan","SHD-16khoroo-32-14", 99080706);
+		st = new student("15b1seas2136", "Batbold", "Otgonbileg", "SHD-16khoroo-32-14", 377663471);
+		student.add(st);
 		bc = new bookCategory("001", "Gadaad nom");
 		bc = new bookCategory("002", "Bailgaliin uhaanii nom");
 		bk= new book("bk001","magadlal statistic","Nomin",2012, 50);
@@ -32,6 +37,30 @@ void inputPin() {
 		
 		if(!lib.passCheck(pin)){
 			inputPin();
+			}
+	
+	void checkbook(int id) {
+		System.out.print("Enter a book id: ");
+		String bookid = input.nextLine();
+		
+		String[] a=bookid.split(" ");
+		int k=0;
+		for(int i=0; i<a.length; i++) {
+			//System.out.println(a[i]);
+			for (k = 0; k < book.size(); k++) {
+				if (book.get(k).bookIdCheck(a[i])) {
+					System.out.println("\t"+book.get(k).toString());
+					student.get(id).bookList.add(book.get(k));
+					
+					break;
+				}
+			}
+			if(k== book.size()) {
+				System.out.println(a[i] + " ene nom baihgui bna");
+			}
+		}	
+		System.out.println("\n\t"+student.get(id).toString());
+	}
 		}
 	}
 
