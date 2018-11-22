@@ -1,4 +1,4 @@
-
+package sw_sem7;
 
 import java.util.ArrayList;
 
@@ -22,6 +22,30 @@ public class book {
 		this.author = author;
 		this.year = year;
 		this.totalNum = totalNum;
+	}
+	
+	boolean bookCheck(String search){
+		if(this.name.equals(search)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	boolean bookIdCheck(String bid){
+		if(this.b_id.equals(bid)) {
+			if(this.issue()) {
+				return true;
+			}
+			else {
+				System.out.println("\tene nom duussan");
+				return false;
+			}			
+		}
+		else {
+			return false;
+		}
 	}
 
 	public String getB_id() {
@@ -72,23 +96,22 @@ public class book {
 		this.type = type;
 	}
 
-	void remove() {
-		if (num > this.totalNum) {
+	boolean issue() {
+		if (0 == this.totalNum) {
 			System.out.println("This book finished.");
-		} else
+			return false;
+		} else {
 			this.totalNum -= num;
+			return true;
+		}			
 	}
 
-	void issue() {
+	void remove() {
 		this.totalNum += num;
-	}
-	
-	void addBook(int number) {
-		this.totalNum+=number;
 	}
 
 	public String toString() {
-		return b_id + " " + name + " " + author + " " + year;
+		return b_id + " - " + name;
 	}
 
 }
