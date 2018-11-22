@@ -1,4 +1,3 @@
-package sw_sem7;
 
 public class bookCategory {
 	public String bc_id;
