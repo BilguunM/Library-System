@@ -23,7 +23,7 @@ void inputPin() {
 		
 		System.out.print("Enter an account : ");
 		String acc = input.next();
-		if(!lib.accCheck(acc)){
+		if(!lib.passCheck(acc)){
 			inputPin();
 		}
 		
