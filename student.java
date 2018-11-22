@@ -47,3 +47,16 @@ public class student {
 		return address;
 	}
 
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getPhoneNum() {
+		return phoneNum;
+	}
+
+	public void setPhoneNum(int phoneNum) {
+		this.phoneNum = phoneNum;
+	}	
+
+}
