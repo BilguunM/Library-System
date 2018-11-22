@@ -1,4 +1,4 @@
-package sw_sem7;
+
 
 import java.util.Scanner;
 
