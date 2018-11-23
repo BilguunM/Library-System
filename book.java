@@ -11,11 +11,21 @@ public class book {
 	public int totalNum;
 
 	public ArrayList<bookCategory> type = new ArrayList<>();
-
+	/**
+	 * Default constructor
+	 */
 	public book() {
 
 	}
-
+	
+	/**
+	 * Create a new book
+	 * @param b_id
+	 * @param name
+	 * @param author
+	 * @param year
+	 * @param totalNum
+	 */
 	public book(String b_id, String name, String author, int year, int totalNum) {
 		this.b_id = b_id;
 		this.name = name;
@@ -24,6 +34,11 @@ public class book {
 		this.totalNum = totalNum;
 	}
 	
+	/**
+	 * Search a book name
+	 * @param search
+	 * @return true or false
+	 */
 	boolean bookCheck(String search){
 		if(this.name.equals(search)) {
 			return true;
@@ -33,19 +48,61 @@ public class book {
 		}
 	}
 	
+	/**
+	 * Check a book id
+	 * @param bid
+	 * @return true or false
+	 */
 	boolean bookIdCheck(String bid){
 		if(this.b_id.equals(bid)) {
 			if(this.issue()) {
 				return true;
 			}
 			else {
-				System.out.println("\tene nom duussan");
 				return false;
 			}			
 		}
 		else {
 			return false;
 		}
+	}
+	/**
+	 * checkRemoveBook
+	 * @param bid
+	 * @return
+	 */
+	boolean checkRemoveBook(String bid){
+		if(this.b_id.equals(bid)) {
+			return true;		
+		}
+		else {
+			return false;
+		}
+	}
+	/**
+	 * Check a book
+	 * @return
+	 */
+	boolean issue() {
+		if (0 == this.totalNum) {
+			System.out.println("\tThere are no copies left.");
+			return false;
+		} else {
+			this.totalNum -= num;
+			return true;
+		}			
+	}
+	
+	/**
+	 * Remove a book
+	 */
+	void remove() {
+		this.totalNum += num;
+	}
+	
+	@Override 
+	public String toString() {
+		return b_id + " - " + name;
 	}
 
 	public String getB_id() {
@@ -96,22 +153,6 @@ public class book {
 		this.type = type;
 	}
 
-	boolean issue() {
-		if (0 == this.totalNum) {
-			System.out.println("This book finished.");
-			return false;
-		} else {
-			this.totalNum -= num;
-			return true;
-		}			
-	}
-
-	void remove() {
-		this.totalNum += num;
-	}
-
-	public String toString() {
-		return b_id + " - " + name;
-	}
+	
 
 }

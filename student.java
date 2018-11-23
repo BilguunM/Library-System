@@ -1,22 +1,54 @@
 package sw_sem7;
 
+import java.util.ArrayList;
+
 public class student {
 	private String st_code;
 	private String l_name;
 	private String f_name;
 	private String address;
 	private int phoneNum;
-	
+	public ArrayList<book> bookList= new ArrayList<>();
+	/**
+	 * Default constructor
+	 */
 	public student() {
 		
 	}
 	
+	/**
+	 * Create a new student
+	 * @param id
+	 * @param lname
+	 * @param fname
+	 * @param address
+	 * @param phoneNum
+	 */
 	public student(String id, String lname, String fname, String address, int phoneNum) {
 		this.st_code = id;
 		this.l_name = lname;
 		this.f_name = fname;
 		this.address = address;
 		this.phoneNum = phoneNum;
+	}
+	
+	/**
+	 * Check a student id
+	 * @param id
+	 * @return true or false
+	 */
+	boolean stuIdCheck(String id) {
+		if(this.st_code.equals(id)) {
+			return true;
+		}
+		else {
+			
+			return false;
+		}
+	}
+	@Override 
+	public String toString() {
+		return st_code + " "+f_name+" avsan nomiin too "+bookList.size();
 	}
 	
 	public String getSt_code() {

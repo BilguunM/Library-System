@@ -1,29 +1,53 @@
+package sw_sem7;
 
 public class librarian {
 	private String userName;
 	private String password;
 	private String name;
-
+	/**
+	 * Default constructor
+	 */
 	public librarian() {
 
 	}
-
+	/**
+	 * Create a new librarian
+	 * @param name
+	 * @param userName
+	 * @param pass
+	 */
 	public librarian(String name, String userName, String pass) {
 		this.name = name;
 		this.userName = userName;
 		this.password = pass;
 	}
 	
-	boolean passCheck(String pass) {
-		if(this.password.equals(pass)) {
-			return true;
+	/**
+	 * Check a librarian userName and password
+	 * @param acc
+	 * @param pass
+	 * @return true or false
+	 */
+	boolean singIn(String acc, String pass) {
+		if(this.userName.equals(acc)) {
+			if(this.password.equals(pass)) {
+				return true;
+			}
+			else {
+				System.out.println("\tPassword is wrong!");
+				return false;
+			}
+		}
+		else if(this.password.equals(pass)) {
+			System.out.println("\tUsername is wrong!");		
+			return false;
 		}
 		else {
-			System.out.println("Password is wrong!");
+			System.out.println("\tUsername is wrong!");	
+			System.out.println("\tPassword is wrong!");
 			return false;
 		}
 	}
-
 	public String getUserName() {
 		return userName;
 	}
