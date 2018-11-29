@@ -52,7 +52,26 @@ void inputPin() {
 			System.out.println(" ");
 			
 			switch(choice) {
-			
+			case 1: 
+				System.out.print("Enter a student id: ");
+					break;
+			case 2:{
+				System.out.print("Enter a student id: ");
+				break;
+			}			
+			case 3:{
+				System.out.print("Enter a name of book: ");
+				break;
+			}
+			case 4:{
+				System.out.print("Enter a name of book: ");
+				break;
+			}
+			case 5:
+				System.out.println("ta systemees garlaa");
+			//	inputPin();
+				System.exit(0);
+				break;
 			default:
 				System.out.println("Your choice is wrong! Please try again. ");
 				break;
