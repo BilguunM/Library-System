@@ -9,21 +9,12 @@ public class student {
 	private String address;
 	private int phoneNum;
 	public ArrayList<book> bookList= new ArrayList<>();
-	/**
-	 * Default constructor
-	 */
+	
 	public student() {
 		
 	}
 	
-	/**
-	 * Create a new student
-	 * @param id
-	 * @param lname
-	 * @param fname
-	 * @param address
-	 * @param phoneNum
-	 */
+	
 	public student(String id, String lname, String fname, String address, int phoneNum) {
 		this.st_code = id;
 		this.l_name = lname;
@@ -32,11 +23,7 @@ public class student {
 		this.phoneNum = phoneNum;
 	}
 	
-	/**
-	 * Check a student id
-	 * @param id
-	 * @return true or false
-	 */
+	
 	boolean stuIdCheck(String id) {
 		if(this.st_code.equals(id)) {
 			return true;
@@ -69,26 +56,4 @@ public class student {
 
 	public String getF_name() {
 		return f_name;
-	}
-
-	public void setF_name(String f_name) {
-		this.f_name = f_name;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public int getPhoneNum() {
-		return phoneNum;
-	}
-
-	public void setPhoneNum(int phoneNum) {
-		this.phoneNum = phoneNum;
-	}	
-
-}
+	
